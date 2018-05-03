@@ -7,6 +7,7 @@ else
 endif
 
 app=knsh
+libobj=${app}_uif.o sysenv.o
 
 all: run
 
@@ -17,7 +18,7 @@ run: ${app}
 dbgrun: ${app}
 	gdb ./${app}
 
-${app}: ${app}.o
+${app}: ${app}.o ${libobj}
 
 
 clean: 
